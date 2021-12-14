@@ -1,7 +1,67 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
 <html>
 
+<head>
+	<title>Menugen</title>
+</head>
+
+<script>
+	const meals = [
+		{name: "Pates", weight: 1},
+		{name: "Cordon Bleu", weight: 0.5},
+		{name: "Carrotes", weight: 1},
+		{name: "Riz", weight: 0.8},
+		{name: "Ramen", weight: 0.2}
+		];
+
+	function test(max){
+			document.getElementById("testfield").innerHTML = '';
+			for (let i = 0; i<max; i++) {
+				var r = Math.floor(Math.random() * meals.length);
+				document.getElementById("testfield").innerHTML += meals[r].name + "<br>";
+			}
+	}
+
+		function generate(n){
+				var wlist = makelist(meals);
+				var menu = [];
+				for (let i=0; i < n; i++){
+						var r = Math.floor(Math.random() * wlist.length);
+						menu.push(wlist[r]);
+					}
+				return menu;
+			}
+
+		function makelist(list){
+				var newlist = [];
+				for (let i=0; i < list.length; i++){
+						for (let j=0; j < meals[i].weight*100; j++){
+							newlist.push(i);
+							}
+					}
+				return newlist;
+			}
+
+		function printmenu(){
+				var menu = generate(9);
+				document.getElementById("menu").innerHTML = '';
+				for (let i = 0; i < menu.length; i++) {
+						var meal = meals[menu[i]];
+						document.getElementById("menu").innerHTML += meal.name + "<br>";
+					}
+			}
+
+
+</script>
+
 <body>
-	lol
+	<h1>Menugen v0.1</h1>
+
+	<button onclick="printmenu()">Generate</button>
+	<div id='menu'></div>
+
 </body>
 
 </html>
