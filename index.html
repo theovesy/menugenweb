@@ -9,11 +9,11 @@
 
 <script>
 	const meals = [
-		{name: "Pates", weight: 1},
-		{name: "Cordon Bleu", weight: 0.5},
-		{name: "Carrotes", weight: 1},
-		{name: "Riz", weight: 0.8},
-		{name: "Ramen", weight: 0.2}
+		{name: "Pates", weight: 1, max: 1},
+		{name: "Cordon Bleu", weight: 0.5, max: 1},
+		{name: "Carrotes", weight: 1, max: 4},
+		{name: "Riz", weight: 0.8, max: 2},
+		{name: "Ramen", weight: 0.2, max:1}
 		];
 
 	function test(max){
@@ -24,12 +24,33 @@
 			}
 	}
 
+		function count(list, target) {
+				var counter = 0;
+				for (i in list){
+						if (list[i] == target){
+								counter++;
+							}
+					}
+				return counter;
+			}
+
 		function generate(n){
 				var wlist = makelist(meals);
 				var menu = [];
 				for (let i=0; i < n; i++){
-						var r = Math.floor(Math.random() * wlist.length);
-						menu.push(wlist[r]);
+						var max_meal = false;
+						do {
+								var r = Math.floor(Math.random() * wlist.length);
+								var meal_index = wlist[r];
+								var meal = meals[meal_index];
+								if (meal.max <= count(menu, meal_index)){
+										max_meal = true;
+										window.alert("Trop de " + meal.name + " (" + count(menu, meal_index) + ")");
+								} else {
+										menu.push(wlist[r]);
+										max_meal = false;
+										}
+							} while (max_meal);
 					}
 				return menu;
 			}
@@ -57,7 +78,7 @@
 </script>
 
 <body>
-	<h1>Menugen v0.1</h1>
+	<h1>Menugen v0.2</h1>
 
 	<button onclick="printmenu()">Generate</button>
 	<div id='menu'></div>
