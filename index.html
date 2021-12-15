@@ -7,80 +7,17 @@
 	<title>Menugen</title>
 </head>
 
-<script>
-	const meals = [
-		{name: "Pates", weight: 1, max: 1},
-		{name: "Cordon Bleu", weight: 0.5, max: 1},
-		{name: "Carrotes", weight: 1, max: 4},
-		{name: "Riz", weight: 0.8, max: 2},
-		{name: "Ramen", weight: 0.2, max:1}
-		];
-
-	function test(max){
-			document.getElementById("testfield").innerHTML = '';
-			for (let i = 0; i<max; i++) {
-				var r = Math.floor(Math.random() * meals.length);
-				document.getElementById("testfield").innerHTML += meals[r].name + "<br>";
-			}
-	}
-
-		function count(list, target) {
-				var counter = 0;
-				for (i in list){
-						if (list[i] == target){
-								counter++;
-							}
-					}
-				return counter;
-			}
-
-		function generate(n){
-				var wlist = makelist(meals);
-				var menu = [];
-				for (let i=0; i < n; i++){
-						var max_meal = false;
-						do {
-								var r = Math.floor(Math.random() * wlist.length);
-								var meal_index = wlist[r];
-								var meal = meals[meal_index];
-								if (meal.max <= count(menu, meal_index)){
-										max_meal = true;
-								} else {
-										menu.push(wlist[r]);
-										max_meal = false;
-										}
-							} while (max_meal);
-					}
-				return menu;
-			}
-
-		function makelist(list){
-				var newlist = [];
-				for (let i=0; i < list.length; i++){
-						for (let j=0; j < meals[i].weight*100; j++){
-							newlist.push(i);
-							}
-					}
-				return newlist;
-			}
-
-		function printmenu(){
-				var menu = generate(9);
-				document.getElementById("menu").innerHTML = '';
-				for (let i = 0; i < menu.length; i++) {
-						var meal = meals[menu[i]];
-						document.getElementById("menu").innerHTML += meal.name + "<br>";
-					}
-			}
-
-
-</script>
-
 <body>
-	<h1>Menugen v0.2</h1>
+	<h1>Menugen v0.6</h1>
 
+	<label for="quantity">Number of meals</label>
+	<input type="number" id="quantity" name="Quantity" min="1" value="9">
 	<button onclick="printmenu()">Generate</button>
 	<div id='menu'></div>
+	<button onclick="copymenu()">Copy to Clipboard</button>
+
+<script src="meals.js"></script>
+<script src="script.js"></script>
 
 </body>
 
