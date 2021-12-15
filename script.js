@@ -61,15 +61,16 @@ function makelist(list){
 function printmenu(){
 		var nb_meals = document.getElementById("quantity").value;
 		var menu = generate(nb_meals, meals);
-		document.getElementById("menu").innerHTML = '';
+		document.getElementById("menu").value = '';
 		for (let i = 0; i < menu.length; i++) {
 				var meal = meals[menu[i]];
-				document.getElementById("menu").innerHTML += meal.name + "<br>";
+				document.getElementById("menu").value += meal.name + "\r\n";
 			}
 	}
 
 function copymenu(){
-		var text = document.getElementById("menu").innerHTML;
-		var text_tocopy = text.replace(/<br>/g, "\r\n");
-		navigator.clipboard.writeText(text_tocopy);
+		var text = document.getElementById("menu");
+		text.select();
+	  text.setSelectionRange(0, 99999);
+		navigator.clipboard.writeText(text.value);
 	}

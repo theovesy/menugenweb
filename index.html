@@ -8,12 +8,12 @@
 </head>
 
 <body>
-	<h1>Menugen v0.6</h1>
+	<h1>Menugen v0.7</h1>
 
 	<label for="quantity">Number of meals</label>
 	<input type="number" id="quantity" name="Quantity" min="1" value="9">
 	<button onclick="printmenu()">Generate</button>
-	<div id='menu'></div>
+	<textarea placeholder="Generate your menu" cols="30" rows="15" id='menu'></textarea>
 	<button onclick="copymenu()">Copy to Clipboard</button>
 
 <script src="meals.js"></script>
