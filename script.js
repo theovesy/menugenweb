@@ -72,6 +72,6 @@ function copymenu(){
 		var text = document.getElementById("menu");
 		text.select();
 	  text.setSelectionRange(0, 99999);
-		//navigator.clipboard.writeText(text.value);
 		document.execCommand('copy');
+		text.blur();
 	}

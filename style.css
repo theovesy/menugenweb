@@ -1,0 +1,38 @@
+body {
+	background-color: lightblue;
+	font-size: 2vw;
+	font-family: "Courier New", monospace;
+	text-align: center;
+}
+h1 {
+	text-shadow: 1px 3px cyan;
+	font-size: 6vw;
+}
+table {
+	margin:auto;
+	width: 50%;
+	padding:10px;
+}
+textarea {
+	font-size: 2vw;
+}
+button {
+	background-color: white;
+	color: black;
+	border: 2px black;
+	padding: 10px 24px;
+	text-align: center;
+	text-decoration: bold;
+	display: inline-block;
+	font-size: 2vw;
+	border-radius: 4px;
+}
+button:hover {
+	background-color: lightgrey;
+}
+button:active {
+	background-color: grey;
+}
+input {
+	width: 20%;
+}

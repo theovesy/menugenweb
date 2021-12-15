@@ -5,16 +5,35 @@
 
 <head>
 	<title>Menugen</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<h1>Menugen v0.7</h1>
 
+	<table>
+		<tr>
+			<td>
+	<h1>Menugen v0.9</h1>
+			</td>
+		</tr>
+		<tr>
+			<td>
 	<label for="quantity">Number of meals</label>
 	<input type="number" id="quantity" name="Quantity" min="1" value="9">
+			</td>
+		</tr>
+		<tr>
+			<td>
 	<button onclick="printmenu()">Generate</button>
-	<textarea placeholder="Generate your menu" cols="30" rows="15" id='menu'></textarea>
 	<button onclick="copymenu()">Copy to Clipboard</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+	<textarea spellcheck="false" placeholder="Generate your menu" cols="25" rows="15" id='menu'></textarea>
+			</td>
+		</tr>
+	</table>
 
 <script src="meals.js"></script>
 <script src="script.js"></script>
