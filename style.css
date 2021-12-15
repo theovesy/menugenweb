@@ -1,22 +1,23 @@
 body {
 	background-color: lightblue;
-	font-size: 2vw;
+	font-size: 3vw;
 	font-family: "Courier New", monospace;
 	text-align: center;
 }
 h1 {
 	text-shadow: 1px 3px cyan;
-	font-size: 6vw;
+	font-size: 8vw;
 }
 table {
 	margin:auto;
-	width: 50%;
+	width: 80%;
 	padding:10px;
 }
 textarea {
-	font-size: 2vw;
+	font-size: 3vw;
 }
 button {
+	font-size: 3vw;
 	background-color: white;
 	color: black;
 	border: 2px black;
