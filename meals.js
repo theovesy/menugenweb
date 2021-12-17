@@ -15,7 +15,7 @@ const meals = [
 	{name: "Jambon à poeler", weight:0.2, max:1},
 	{name: "Tortelini", weight:0.4, max:1},
 	{name: "Gnocchi", weight:0.2, max:1},
-	{name: "Spezle", weight:0.2, max:1},
+	{name: "Spaetzle", weight:0.2, max:1},
 	{name: "Escalopes Panées", weight:0.3, max:1},
 	{name: "Ravioli", weight:0.3, max:1},
 	{name: "Croque-Monsieur", weight:0.2, max:1},
