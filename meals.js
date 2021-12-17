@@ -2,7 +2,7 @@ const meals = [
 	{name: "Pates", weight: 1, max: 1},
 	{name: "Cordon Bleu", weight: 0.5, max: 1},
 	{name: "Carrotes", weight: 1, max: 3},
-	{name: "Riz-Chili", weight: 0.8, max: 2},
+	{name: "Riz-Chili", weight: 0.8, max: 1},
 	{name: "Ramen", weight: 0.2, max:1},
 	{name: "Saumon fumé", weight: 0.1, max:1},
 	{name: "Steak + Broccoli", weight:0.3, max:1},

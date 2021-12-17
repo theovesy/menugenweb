@@ -15,17 +15,19 @@ table {
 }
 textarea {
 	font-size: 3vw;
+	font-family: "Courier New", monospace;
+	border: 2px solid black;
 }
 button {
 	font-size: 3vw;
+	font-family: "Courier New", monospace;
 	background-color: white;
 	color: black;
-	border: 2px black;
+	border: 2px solid black;
 	padding: 10px 24px;
 	text-align: center;
 	text-decoration: bold;
 	display: inline-block;
-	font-size: 2vw;
 	border-radius: 4px;
 }
 button:hover {
@@ -36,4 +38,6 @@ button:active {
 }
 input {
 	width: 20%;
+	font-family: "Courier New", monospace;
+	font-size: 3vw;
 }
