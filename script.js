@@ -24,6 +24,15 @@ function count(list, target) {
 		return counter;
 	}
 
+function get_group_max(meal, group_list){
+	for i in group_list{
+		if (meal.group == group_list[i].group){
+			return group_list[i].max;
+		}
+	}
+	return null;
+}
+
 function generate(n, meal_list){
 		max_n = max_menu(meal_list);
 		if (n > max_n) {
@@ -37,7 +46,8 @@ function generate(n, meal_list){
 						var r = Math.floor(Math.random() * wlist.length);
 						var meal_index = wlist[r];
 						var meal = meal_list[meal_index];
-						if (meal.max <= count(menu, meal_index)){
+						var group_max = get_group_max(meal, groups);
+					if (meal.max <= count(menu, meal_index)){
 								max_meal = true;
 						} else {
 								menu.push(wlist[r]);
