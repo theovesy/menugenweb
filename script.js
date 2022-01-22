@@ -25,7 +25,7 @@ function count(list, target) {
 	}
 
 function get_group_max(meal, group_list){
-	for i in group_list{
+	for (i in group_list) {
 		if (meal.group == group_list[i].group){
 			return group_list[i].max;
 		}
